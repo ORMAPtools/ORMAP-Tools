@@ -4,25 +4,33 @@ ORMAP Tools V2.0
 1/16/2022
 
 Toolbox and python script tools to support ORMAP functions.
-ArcPr (2.8.3)
+ArcPro (2.8.3)
 
-Tools
-Zoom To Map (Python Script: None)
-UpdateMapIndex (Python Script: UpdateMapIndex.py)
-CreateDDAnnoFromLabels (Python Script: AddDimAnno.py)
+## Tools
 
-To Install:
+The toolbox file ORMAPToolsV2.tbx contains these tools:
+
+    CreateDDAnnoFromLabels (Python Script: AddDimAnno.py) 
+    UpdateMapIndex (Python Script: UpdateMapIndex.py) 
+    Zoom To Map (Python: no separate file)
+
+The code for the first two is in separate files.
+
+There is not a separate file for Zoom To Map because the code is embedded in the
+toolbox. Open Properties and click on the Validation item to see it.
+
+## To Install
 
 1. Add "ORMAPToolsV2.tbx" to your ArcPro project
-2. Copy Tools from "ORMAPToolsV2.tbx"  to your tool box
-3. Copy python scripts to your tool script location
-4. For tools that reference Scripts
--- Open Properties/General
--- Change Script File path to reference the new location
+2. (Optionally) copy the tools from "ORMAPToolsV2.tbx" to your tool box
+3. Copy the python scripts to your tool script location
+4. For each tools that reference a script,
+* Open Properties/General
+* Change Script File path to reference your location
 
-Customization:
+## Customization
 
-Customizing scripts requires you to have a working knolege of tools and python.
+Customizing scripts requires you to have a working knowledge of tools and python.
 
 Zoom To Map - This tool assumes you have layers called Taxlot and MapIndex.  To change the layers you must open the properties/validation and change them.  If you have other layers you wish to filter then change the properties/parameters and change the FilterLayers value list.
 
