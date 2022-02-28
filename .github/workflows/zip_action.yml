@@ -17,4 +17,7 @@ jobs:
         files: README.md ORMAPToolsV2.tbx AdddDimAnno.py UpdateMapIndex.py
         recursive: false
         dest: ORMAPToolsV2.0.zip
+    - uses: actions/upload-artifact@v1
+      with:
+        name: ORMAP zip file
         path: ${{ github.workspace }}/ORMAPToolsV2.0.zip
