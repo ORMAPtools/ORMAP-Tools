@@ -1,0 +1,23 @@
+name: Build a zip file for downloading
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build zip
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Zip files
+      uses: papeloto/action-zip@v1
+      with:
+        files:
+          - ORMAPToolsV2.tbx
+          - AdddDimAnno.py
+          - UpdateMapIndex.py
+        recursive: false
+        dest: ORMAPToolsV2.0.zip
+        path: ${{ github.workspace }}/ORMAPToolsV2.0.zip
