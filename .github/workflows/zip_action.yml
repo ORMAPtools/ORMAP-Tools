@@ -7,12 +7,17 @@ on:
 
 jobs:
   build:
-    name: Build zip
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Zip files
-      uses: montudor/action-zip@v1
+    - uses: actions/checkout@master
+    - name: Make a release zip file
+      uses: thedoctor0/zip-release@master
       with:
-        args: zip ORMAPToolsV2.0.zip README.md ORMAPToolsV2.tbx AdddDimAnno.py UpdateMapIndex.py
-      
+        type: 'zip'
+        filename: ORMAPToolsV2.0.zip
+      exclusions: '.git*'
+    - name: Upload zip file
+      uses: actions/upload_artifact@v2
+      with:
+        name: ORMAPToolsV2.0
+        path: ORMAPToolsV2.0.zip
