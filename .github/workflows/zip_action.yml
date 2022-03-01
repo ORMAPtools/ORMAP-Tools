@@ -15,7 +15,7 @@ jobs:
       with:
         type: 'zip'
         filename: ORMAPToolsV2.0.zip
-      exclusions: '.git*'
+        exclusions: '.git*'
     - name: Upload zip file
       uses: actions/upload_artifact@v2
       with:
