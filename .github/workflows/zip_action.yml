@@ -17,7 +17,7 @@ jobs:
         filename: ORMAPToolsV2.0.zip
         exclusions: '.git*'
     - name: Upload zip file
-      uses: actions/upload_artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: ORMAPToolsV2.0
         path: ORMAPToolsV2.0.zip
