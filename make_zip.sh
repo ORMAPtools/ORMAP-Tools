@@ -1,6 +1,6 @@
 #!usr/bin/bash
 
-FOLDER=ORMAPTOOLSV2.01
+FOLDER=ORMAPToolsV2.01
 ARCHIVE=$FOLDER.zip
 
 rm -f $ARCHIVE
