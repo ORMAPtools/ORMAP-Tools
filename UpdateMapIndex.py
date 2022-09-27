@@ -20,7 +20,7 @@
 #
 # Update: updated to be sure to really exit if more then one map selected - Dean March 2021
 
-
+import sys
 import arcpy 
 
 # 1. Get values from parameters  ----
@@ -70,7 +70,7 @@ if QuarterSection == "0" and QtrQtrSection != "0":
     arcpy.AddError ("Quarter/Quarter is filled but Quarter is not")
     sys.exit(0)
 if QuarterSection != "0" and Section == "00":
-    arcpy.AddError ("Can not have a section 00 with quartersections filled")
+    arcpy.AddError ("Cannot have a section 00 with quartersections filled")
     sys.exit(0)
     
 # 3. Calc Map Title----------------------Any county specific code for suffixes etc goes here ----------------------------------------
@@ -97,10 +97,10 @@ if Section != "00":
 with arcpy.da.UpdateCursor(MapLayer,['MapNumber','MapScale','County','ORMapNum','CityName','PageName','Book','GroupName','SecondTitle','ReliaCode','MapAngle',"MapTitle"]) as cursor:
     for row in cursor:
         row[0] = MapNumber
-        if row[1] is None:       
-            row[1] = MapScale
-        if row[2] is None:               
-            row[2] = County
+        #if row[1] is None:       
+        row[1] = MapScale
+        #if row[2] is None:               
+        row[2] = County
         row[3] = County + Town + TownPart + TownDir + Range + RangePart + RangeDir + Section + QuarterSection + QtrQtrSection + Anomaly + MapSuffixType + MapSuffixNumber
         row[4] = CityName
         row[5] = PageName
