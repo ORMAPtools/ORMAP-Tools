@@ -1,6 +1,4 @@
-AddDimAnno.py
 Default.tbx
 ReadMe.txt
-UpdateMapIndex.py
-UpdateORMAPArea.py
 manifest.txt
+ORMAPTools/
